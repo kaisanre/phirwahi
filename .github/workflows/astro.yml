@@ -1,0 +1,24 @@
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: '7.0.0'  # Specify your pnpm version here
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build the site
+      run: pnpm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        branch: gh-pages  # You can specify your deployment branch here
+        folder: dist  # Make sure this points to the build folder of your Astro project
