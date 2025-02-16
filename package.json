@@ -42,7 +42,7 @@
   
 	},
 {
-  "packageManager": "pnpm@7.0.0"  // Replace with the version you're using
+  "packageManager": "pnpm@7.0.0" 
 }
 
 	"devDependencies": {
